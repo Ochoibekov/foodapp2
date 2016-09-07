@@ -1,0 +1,5 @@
+class AddRestoranToFoods < ActiveRecord::Migration
+  def change
+    add_reference :foods, :restoran, index: true, foreign_key: true
+  end
+end
