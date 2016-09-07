@@ -1,0 +1,8 @@
+<div class="container">
+<% Restoran.all.each do |restoran| %>
+<div>	<%= restoran.name %></div>
+<div>	<%= restoran.description %></div>
+<div>	<%= link_to image_tag( restoran.image.url(:thumb)),restorans_show_path(restoran.id) %></div>
+	
+<% end %>
+</div>

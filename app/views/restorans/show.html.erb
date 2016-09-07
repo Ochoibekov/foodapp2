@@ -1,0 +1,12 @@
+<%= @restoran.name %>
+<%= @restoran.description %>
+
+<% @restoran.foods.each do |item| %>
+	<div  class="container">
+		<div> <%= item.name %> </div>
+		<div> <%= item.description %> </div>
+		<div> <%= item.price %> </div>
+		<div> <%= image_tag item.image.url(:thumb) %> </div>
+		<div><%= link_to "Добавить в корзину", %> </div>
+	</div>
+<%end %>

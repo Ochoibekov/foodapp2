@@ -14,10 +14,10 @@ def access_denied(exception)
 private
   
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:name, :adres, :phone)}
+    devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:name, :adres, :phone,:email,:password,:password_confirmation)}
     # devise_parameter_sanitizer.for(:sign_up) << :phone
     # devise_parameter_sanitizer.for(:sign_up) << :adres
-    devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:name, :adres, :phone)}
+    devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:name, :adres, :phone,:email,:password,:password_confirmation)}
     # devise_parameter_sanitizer.for(:account_update) << :adres
     # devise_parameter_sanitizer.for(:account_update) << :phone
   end

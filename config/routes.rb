@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'restorans#index'
+  get 'restorans/:id/show'=>'restorans#show', as: 'restorans_show'
   ActiveAdmin.routes(self)
   
 
