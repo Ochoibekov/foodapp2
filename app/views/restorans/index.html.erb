@@ -1,8 +1,11 @@
-<div class="container">
+<h1>Список Ресторанов</h1>
 <% Restoran.all.each do |restoran| %>
-<div>	<%= restoran.name %></div>
-<div>	<%= restoran.description %></div>
-<div>	<%= link_to image_tag( restoran.image.url(:thumb)),restorans_show_path(restoran.id) %></div>
-	
+<div class="col-md-3 menu-card">
+<p class="nazvanie">	<%= restoran.name %></p>
+<p>	<%= restoran.description %></p>
+<p class="p-link">	<%= link_to image_tag( restoran.image.url(:thumb)),restorans_show_path(restoran.id),class: "qwerty" %></p>
+</div>	
 <% end %>
-</div>
+
+
+

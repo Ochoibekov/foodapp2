@@ -1,12 +1,23 @@
-<%= @restoran.name %>
-<%= @restoran.description %>
-
+<h1><%= @restoran.name %></h1>
+<h2><%= @restoran.description %></h2>
+<div class="row">
+<h3>Меню ресторана</h3>
 <% @restoran.foods.each do |item| %>
-	<div  class="container">
-		<div> <%= item.name %> </div>
-		<div> <%= item.description %> </div>
-		<div> <%= item.price %> </div>
-		<div> <%= image_tag item.image.url(:thumb) %> </div>
-		<div><%= link_to "Добавить в корзину", %> </div>
+	<div class ="col-md-12"> 
+		<div class="col-md-2 menu_card2">
+			<p>название: <%= item.name %> </p>
+			<p>описание: <%= item.description %> </p>
+			<p>цена:<%= item.price %> </p>
+			<p> <%= image_tag item.image.url(:thumb) %> </p>
+			<div>
+			<%if user_signed_in? %>
+				<%= link_to "Добавить в корзину",root_path %>
+				<%end %>
+			</div>
+		</div>
 	</div>
 <%end %>
+</div>
+
+
+
